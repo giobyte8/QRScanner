@@ -112,8 +112,9 @@ public class QRReader extends Application {
             @Override
             protected Void call() {
                 final AtomicReference<WritableImage> ref = new AtomicReference<>();
-                BufferedImage img = null;
+                BufferedImage img;
 
+                //noinspection ConstantConditions,LoopConditionNotUpdatedInsideLoop
                 while (!stopCamera) {
                     try {
                         if ((img = webcam.getImage()) != null) {
@@ -156,7 +157,7 @@ public class QRReader extends Application {
                     ButtonType no = new ButtonType("Cancelar", ButtonBar.ButtonData.CANCEL_CLOSE);
                     confirmDialog.getButtonTypes().setAll(no, yes);
                     Optional<ButtonType> result = confirmDialog.showAndWait();
-                    if (result.get() == yes) {
+                    if (result.isPresent() && result.get() == yes) {
                         openFolderInExplorer(scanResult);
                     }
 
