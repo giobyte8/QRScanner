@@ -39,6 +39,10 @@ public class QRReader extends Application {
     private boolean showingDialog = false;
     private long lastDirectlyOpenedTime = 0;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Coloque el código frente a la camara");

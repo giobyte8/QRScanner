@@ -1,0 +1,14 @@
+{
+  "platform": "windows64",
+  "jdk": "/opt/java/jdk1.8.0_162",
+  "executable": "QRScanner",
+  "classpath": [
+    "QRScanner.jar"
+  ],
+  "mainclass": "org.assistant.qreader.ui.QRReader",
+  "vmargs": [
+    "Xmx1G"
+  ],
+  "minimizejre": "soft",
+  "output": "windows"
+}
